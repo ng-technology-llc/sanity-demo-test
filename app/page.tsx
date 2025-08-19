@@ -137,7 +137,7 @@ export default async function HomePage() {
             <div className="grid md:grid-cols-3 gap-8">
               {data.featuredPosts.map((post: any) => (
                 <article key={post._id} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                  {post.featuredImage && (
+                  {post.featuredImage && post.featuredImage.asset && (
                     <img
                       src={urlForImage(post.featuredImage).width(400).height(250).url()}
                       alt={post.featuredImage.alt || post.title}
@@ -187,7 +187,7 @@ export default async function HomePage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {data.featuredProducts.map((product: any) => (
                 <div key={product._id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                  {product.image && (
+                  {product.image && product.image.asset && (
                     <img
                       src={urlForImage(product.image).width(300).height(300).url()}
                       alt={product.image.alt || product.title}
@@ -247,7 +247,7 @@ export default async function HomePage() {
             <div className="grid md:grid-cols-3 gap-8">
               {data.featuredProjects.map((project: any) => (
                 <div key={project._id} className="group relative overflow-hidden rounded-lg shadow-lg">
-                  {project.coverImage && (
+                  {project.coverImage && project.coverImage.asset && (
                     <img
                       src={urlForImage(project.coverImage).width(400).height(300).url()}
                       alt={project.coverImage.alt || project.title}

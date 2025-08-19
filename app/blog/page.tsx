@@ -48,7 +48,7 @@ export default async function BlogPage() {
                 key={post._id}
                 className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
               >
-                {post.featuredImage && (
+                {post.featuredImage && post.featuredImage.asset && (
                   <Link href={`/blog/${post.slug.current}`}>
                     <img
                       src={urlForImage(post.featuredImage).width(400).height(250).url()}
